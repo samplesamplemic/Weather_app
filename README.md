@@ -1,2 +1,2 @@
 # Weather App with React 
-(./src/assets/weather-app.png)
+![design preview](./src/assets/weather-app.png)
