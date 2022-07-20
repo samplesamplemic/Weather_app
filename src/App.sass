@@ -1,0 +1,102 @@
+@import sass/variables
+
+@mixin reset
+     margin: 0
+     padding: 0
+     box-sizing: border-box
+
+html, body, #root, .container
+     @include reset
+     width: 100%
+     height: 100%
+
+body
+     background-image: $bg-desktop
+     background-repeat: no-repeat
+     background-size: cover
+     background-attachment: fixed
+     color: $primary
+
+@mixin flex-row
+     display: flex
+     align-items: end
+     justify-content: space-between
+     gap: 1rem
+     overflow: hidden
+
+.flex-row
+     @include flex-row
+
+.rain-icon
+     width: 30px
+
+.side-menu
+     align-self: start
+     padding: 1rem 1rem 0 1rem
+     background: $bg-clr-side-menu
+     height: 100%
+     width: 17rem
+     div
+          color: $secondary
+          p
+               color: white
+               font-size: 1.2rem
+               margin: 2rem 0 0.5rem 0
+     span
+          float: right
+          color: white
+     input
+          border: none
+          background-color: transparent
+          border-bottom: 1px solid white
+          color: $primary
+          font-size: $fsize
+          width: 100%
+          &:focus
+               outline: none
+          &::placeholder
+               color: $secondary
+     .weather-details > div 
+          margin-top: 1rem
+          font-size: $fsize
+     .get-local
+          font-size: 1.1rem
+          margin-top: 1rem
+          padding-top: 1rem
+          border-top: 1px solid lightgray
+          cursor: default
+
+.information
+     margin: 0 0 3.5rem 3rem
+     font-size: $fsize
+     .temp
+          font-size: 4rem
+          height: 4.5rem
+          //align-self: baseline
+     #icon
+          height: 42px
+     .flex-column
+          display: flex
+          flex-direction: column
+          .location
+               font-size: calc($fsize * 1.5)
+
+.search-icon
+     cursor: pointer
+
+@media (max-width: 580px)
+     html, body, #root, .container
+           //background: linear-gradient(0deg, rgba(66, 75, 90, 1) 27%, rgb(123, 152, 162) 100%)
+           display: flex
+           flex-direction: column-reverse
+     .search-icon
+          width: 2rem
+     .side-menu
+          background: none
+          width: 90%
+          height: fit-content
+     .information 
+          display: flex
+          margin: 0 1rem 4rem 1rem 
+          width: 90%
+          
